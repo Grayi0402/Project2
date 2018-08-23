@@ -21,7 +21,7 @@ export class StaffListComponent implements OnInit {
   public isDisplay : boolean ;
   public subcription: Subscription;
   public listStaff: Staff[];
-  public api: string="http://192.168.0.108:9999/test/getAll";
+  // public api: string="http://192.168.0.108:9999/test/getAll";
   constructor(
   	public staffService: StaffService,
     public routerService: Router,
@@ -32,18 +32,19 @@ export class StaffListComponent implements OnInit {
 
   ngOnInit() {
 	  this.list = this.staffService.getAllList();
-	  this.getData();
+    console.log('oninit' + this.list);
+	  // this.getData();
   }
    
    
-getData(){
-  console.log('start ...');
-  this.subcription= this._httpGet.getAll(this.api).subscribe(data=>{
-    this.listStaff = data.body;
-    console.log('Phuong : ' + this.listStaff);
-  },error => {
-    console.log('error : ' + error);
-  })
-}
+// getData(){
+//   console.log('start ...');
+//   this.subcription= this._httpGet.getAll(this.api).subscribe(data=>{
+//     this.listStaff = data.body;
+//     console.log('Phuong : ' + this.listStaff);
+//   },error => {
+//     console.log('error : ' + error);
+//   })
+// }
 
 }

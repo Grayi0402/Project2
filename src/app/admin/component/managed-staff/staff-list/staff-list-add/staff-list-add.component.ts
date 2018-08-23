@@ -80,18 +80,15 @@ export class StaffListAddComponent implements OnInit {
     email: string, degree: string, state: number, address: string, temporary: string,
     passportNumber: number, dateOfIssue: string, placeOfIssue: string, atmNumber: number,
     taxCode: number, position: string, startProbation: string, endProbation: string,
-<<<<<<< HEAD
     startWorking: string, endWorking: string){
   	// let staff = new Staff(null,code,name,gender,birthday,phone,email,degree,state,address,temporary,
    //                  passportNumber,dateOfIssue,placeOfIssue,atmNumber,taxCode,position,startProbation,
    //                  endProbation,startWorking,endWorking);
   	// this.staffService.addStaff(staff);
-=======
-    startWorking: string, endWorking: string) {
-    let staff = new Staff(null, code, name, gender, birthday, phone, email, degree, state, address, temporary,
-      passportNumber, dateOfIssue, placeOfIssue, atmNumber, taxCode, position, startProbation,
-      endProbation, startWorking, endWorking);
-    this.staffService.addStaff(staff);
->>>>>>> 255805bdf20a06f03145b82225252230cd89c96b
+    // startWorking: string, endWorking: string) {
+    // // let staff = new Staff(null, code, name, gender, birthday, phone, email, degree, state, address, temporary,
+    // //   passportNumber, dateOfIssue, placeOfIssue, atmNumber, taxCode, position, startProbation,
+    // //   endProbation, startWorking, endWorking);
+    // this.staffService.addStaff(staff);
   }
 }

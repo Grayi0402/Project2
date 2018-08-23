@@ -45,6 +45,10 @@
 					<label>Ngày bắt đầu <br> làm việc</label>
 					<span><input type="text"></span>
 				</div><br>
+				<div class="column">
+					<label>Trạng thái hợp đồng</label>
+					<span><input type="text"></span>
+				</div><br>
 			</div>
 		</div>
 
@@ -69,12 +73,14 @@
 						<th>Số điện thoại</th>
 						<th>Email</th>
 						<th>Trình độ</th>
+						<th>Tình trạng hợp đồng</th>
+						<th>Dự án đang làm</th>
 						<th>Trạng thái</th>
 						<th></th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr *ngFor="let staff of listStaff">
+					<tr *ngFor="let staff of list">
 						<td>{{staff.id}}</td>
 						<td>{{staff.name}}</td>
 						<td> {{staff.gender == 1 ? 'Nam' : 'Nữ'}}</td>
@@ -82,6 +88,8 @@
 						<td>{{staff.phone}}</td>
 						<td>{{staff.email}}</td>
 						<td>{{staff.degree}}</td>
+						<td></td>
+						<td></td>
 
 						<td *ngIf="staff.lookStatus == 1 ">Đang làm việc</td>
 						<td *ngIf="staff.lookStatus == 0 ">Đã nghỉ việc</td>

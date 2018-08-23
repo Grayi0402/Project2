@@ -1,13 +1,14 @@
+<header>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</header>
+
 <div *ngIf="staff">
 	<div class="path">
 		<a href="#">Quản lý nhân sự</a>>>
 		<a href="#">Thông tin nhân viên</a>>>
 		<a href="#">Chi tiết</a>
 	</div>
-	<div class="button">
-		<button id="add" [routerLink]="['/admin/staff/staff-list-add']">Thêm</button>
-		<button id="update">Sửa</button>
-	</div>
+	
 	<div class="container">
 		<div class="title">
 			<h1>Thông tin nhân viên</h1>
@@ -83,6 +84,10 @@
 								<option value="Khác">Khác</option>
 							</select>
 						</span>
+					</div><br>
+					<div class="column">
+						<label>CV cá nhân</label>
+						<span> <i class="fa fa-eye"> Xem  </i></span>
 					</div><br>
 				</div>
 
@@ -164,6 +169,10 @@
 						<span><input type="text"  *ngIf="staff.lookStatus == 2 " value="Đang xem xét" [disabled]="isDisplay" #lookStatus></span>
 						<span><input type="text"  *ngIf="staff.lookStatus == -1 " value="Khác" 
 							[disabled]="isDisplay" #lookStatus></span> -->
+					</div><br>
+					<div class="column">
+						<label>Các dự án đã tham gia</label>
+						<span> <i class="fa fa-eye"> Xem  </i></span>
 					</div><br>
 				</div>
 			</div>
