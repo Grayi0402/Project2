@@ -80,8 +80,8 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr *ngFor="let staff of list">
-						<td>{{staff.id}}</td>
+					<tr *ngFor="let staff of listStaff,let i = index">
+						<td>{{i+1}}</td>
 						<td>{{staff.name}}</td>
 						<td> {{staff.gender == 1 ? 'Nam' : 'Nữ'}}</td>
 						<td>{{staff.birthday}}</td>
@@ -102,7 +102,7 @@
 									[isDisable]="isDisplay"</span> -->
 								Chi tiết</button>
 							
-							<i class="fa fa-remove" id="delete"></i>
+							<i class="fa fa-remove" id="delete" (click)="onDeleteStaff(staff.id)"></i>
 						</td>
 					</tr>
 				</tbody>

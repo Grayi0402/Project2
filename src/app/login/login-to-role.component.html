@@ -8,12 +8,12 @@
 	<input type="password" placeholder="username" class="password" id="password">
 	<br>
 	<br>
-	<label>Chọn quyền đăng nhập</label>
-	<select id="selected">
+	<!-- <label>Chọn quyền đăng nhập</label> -->
+	<!-- <select id="selected">
 		<option id="user" value="user">Nhân Viên</option>
 		<option id="admin" value="admin">Admin</option>
 		<option id="manager" value="manager">Quản Lý</option>
-	</select>
+	</select> -->
 	<h4 *ngIf="colorCheck"[style.color]="colorCheck" >{{isChecked?"Đăng nhập thành công":"Đăng nhập thất bại"}}</h4>
 	<br>
 	<h4 class='warming' *ngIf="msg" [style.color]="'red'">{{msg}}</h4>

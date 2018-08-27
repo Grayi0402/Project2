@@ -1,21 +1,33 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http'
 import { Observable, throwError} from 'rxjs'
-import { catchError } from 'rxjs/operators';
+import { catchError, retry } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
 export class HttpPutService {
 	
   constructor( 
-  	private _httpClient : HttpClient
+  	private httpClient : HttpClient
   	) { }
 
-  updateData(api:string,obj:any):Observable<any>{
-  	return this._httpClient.put(`${api}/${obj.id}`,obj)
-		.pipe(catchError(this.errorHandler))
+  updateData(obj:any,api:string):Observable<any>{
+  	return this.httpClient.put(`${api}/${obj.id}`,obj)
+		.pipe(retry(3) ,catchError(this.errorHandler))
   }
+  \
   errorHandler(error: HttpErrorResponse){
-		return throwError(error.message || "Serve Error");
+		if (error.error instanceof ErrorEvent) {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error('An error occurred:', error.error.message);
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong,
+      console.error(
+        `Backend returned code ${error.status}, ` +
+        `body was: ${error.error}`);
+    }
+
+    return throwError(error.message || "Serve Error");
 	}
 }

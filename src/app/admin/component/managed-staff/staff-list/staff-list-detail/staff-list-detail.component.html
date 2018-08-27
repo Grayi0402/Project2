@@ -109,7 +109,7 @@
 						<span><input type="number" value="{{staff.phone}}" 
 							[disabled]="isDisplay" #phone formControlName="phone"></span>
 					</div><br>
-					<p *ngIf="(!formEdit.controls['atmNumber'].valid) && (formEdit.controls['atmNumber'].touched)"> 	{{titleAlert}}</p>
+					<p *ngIf="(!formEdit.controls['atmNumber'].valid) && (formEdit.controls['atmNumber'].touched)"> {{titleAlert}}</p>
 					<div class="column">
 						<label>Số Tài khoản ngân hàng</label>
 						<span><input type="number" value="{{staff.atmNumber}}" 
