@@ -10,7 +10,7 @@ export class LogginService {
   }
   checkLog(username:string,password:string,role:string):boolean{
 	if(role=='admin'){
-		if(username == 'admin' && password =='admin'){
+		if(username == 'nguyenbanh1' && password =='nguyenbanh1'){
 			return true;
 		}
 	}

@@ -26,7 +26,7 @@ export const routesAdmin: Routes = [
     {
         path: 'admin',
         component: AdminComponentComponent,
-        canActivate: [LoginGuard],
+        // canActivate: [LoginGuard],
         children: [
 
             {

@@ -10,8 +10,8 @@ export class HttpPostService {
 	constructor(
 		private httpClient: HttpClient) { }
 
-	add(any, api: string): Observable<Object> {
-		return this.httpClient.post<Object>(api, any).pipe(retry(3), catchError(this.errorHandle));
+	add(any, api: string): Observable<HttpResponse<any>> {
+		return this.httpClient.post<any>(api, any).pipe(retry(3), catchError(this.errorHandle));
 	}
 
 	errorHandle(error: HttpErrorResponse) {
